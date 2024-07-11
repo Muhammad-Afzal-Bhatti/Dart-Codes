@@ -62,7 +62,32 @@ void main() {
     print("The list is not sorted");
   }
 }
-
 }
+
+
+// Sort List of List Using Their String Values
+String index = " ";
+void main() {
+  List ListOfLsit = [
+    ["Onion", 750, 5, 150],
+    ["Potato", 120, 2, 240],
+    ["Ginger", 650, 05, 325],
+    ["Tomato", 650, 05, 325]
+  ];
+  for (int i = 0; i < ListOfLsit.length; i++) {
+    index = ListOfLsit[i][0];
+    for (int j = i + 1; j < ListOfLsit.length; j++) {
+      if (ListOfLsit[j][0].compareTo(index) < 0) {
+        var temp = ListOfLsit[i];
+        ListOfLsit[i] = ListOfLsit[j];
+        ListOfLsit[j] = temp;
+      }
+    }
+  }
+  print(ListOfLsit);
+}
+
+
+
 
 
