@@ -43,6 +43,26 @@ void main() {
       print("Number Not Found");
     }
   }
+
+
+// Write a dart program to check weather a give list is sorted or not
+void main() {
+  List<int> numbers = [1, 2, 3, 5];
+  bool isSorted = true;
+  for (int i = 0; i < numbers.length - 1; i++) {
+    if (numbers[i] > numbers[i + 1]) {
+      isSorted = false;
+      break;
+    }
+  }
+
+  if (isSorted) {
+    print("The list is sorted");
+  } else {
+    print("The list is not sorted");
+  }
+}
+
 }
 
 
