@@ -9,7 +9,24 @@ void main() {
 }
 
 
-//2. Write a program to check if given character is digit
+//2. Write a dart program to find sum of N numbers
+import 'dart:io';
+
+void main() {
+  int sum = 0;
+  int x = 1;
+  print("Enter a number to find n number sum");
+  int n = int.parse(stdin.readLineSync()!);
+  while (x <= n) {
+    sum = sum + x;
+    x++;
+  }
+  x--;
+  print("The sum of $x numbers is $sum");
+}
+
+
+//3. Write a program to check if given character is digit
 void main() {
   String character = "6";
   if (character.codeUnitAt(0) >= 48 && character.codeUnitAt(0) <= 57)
@@ -20,7 +37,7 @@ void main() {
 }
 
 
-//3. Write A Dart Program To Perform Binray Search
+//4. Write A Dart Program To Perform Binray Search
 import 'dart:io';
 void main() {
   print("Enter a number that you want to search");
@@ -45,7 +62,7 @@ void main() {
   }
 
 
-//4. Write a dart program to check weather a give list is sorted or not
+//5. Write a dart program to check weather a give list is sorted or not
 void main() {
   List<int> numbers = [1, 2, 3, 5];
   bool isSorted = true;
@@ -65,7 +82,7 @@ void main() {
 }
 
 
-//5. Write a Dart program to sort a list without using function
+//6. Write a Dart program to sort a list without using function
 void main() {
   List numbers = [1, 4, 2, 9, 3, 7, 5, 14];
   for (int i = 0; i < numbers.length; i++) {
