@@ -82,7 +82,7 @@ void main() {
 }
 
 
-//6. Write a Dart program to sort a list without using function
+//6. Write a Dart program to sort a number list without using function
 void main() {
   List numbers = [1, 4, 2, 9, 3, 7, 5, 14];
   for (int i = 0; i < numbers.length; i++) {
@@ -97,9 +97,26 @@ void main() {
   print(numbers);
 }
 
+//7. Write a Dart program to sort Name List
+void main(){
+  int position;
+  List names=["Fahad","Qasim","Afzal","Uzair","Wahid","Bilal","Dawood"];
+  for(int i=0;i<names.length;i++){
+    position=i;
+    for(int j=i+1;j<names.length;j++){
+      if(names[j].compareTo(names[position])<0)
+      position=j;
+    }
+    String temp=names[i];
+    names[i]=names[position];
+    names[position]=temp;
+  }
+  print(names);
+}
 
 
-//6. Sort List of List Using Their String Values
+
+//8. Sort List of List Using Their String Values
 String index = " ";
 void main() {
   List ListOfLsit = [
