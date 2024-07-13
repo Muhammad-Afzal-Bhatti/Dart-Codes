@@ -1,4 +1,4 @@
-// Write a Dart Program To Add Two Numbers
+//1. Write a Dart Program To Add Two Numbers
 import 'dart:io';
 void main() {
   print("Enter First Number");
@@ -9,7 +9,7 @@ void main() {
 }
 
 
-// Write a program to check if given character is digit
+//2. Write a program to check if given character is digit
 void main() {
   String character = "6";
   if (character.codeUnitAt(0) >= 48 && character.codeUnitAt(0) <= 57)
@@ -20,7 +20,7 @@ void main() {
 }
 
 
-// Write A Dart Program To Perform Binray Search
+//3. Write A Dart Program To Perform Binray Search
 import 'dart:io';
 void main() {
   print("Enter a number that you want to search");
@@ -45,7 +45,7 @@ void main() {
   }
 
 
-// Write a dart program to check weather a give list is sorted or not
+//4. Write a dart program to check weather a give list is sorted or not
 void main() {
   List<int> numbers = [1, 2, 3, 5];
   bool isSorted = true;
@@ -65,7 +65,24 @@ void main() {
 }
 
 
-// Sort List of List Using Their String Values
+//5. Write a Dart program to sort a list without using function
+void main() {
+  List numbers = [1, 4, 2, 9, 3, 7, 5, 14];
+  for (int i = 0; i < numbers.length; i++) {
+    for (int j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] > numbers[j]) {
+        int temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+      }
+    }
+  }
+  print(numbers);
+}
+
+
+
+//6. Sort List of List Using Their String Values
 String index = " ";
 void main() {
   List ListOfLsit = [
