@@ -137,6 +137,22 @@ void main() {
 }
 
 
+// Word Count Using Map In String
+void main() {
+Map charfreq = {};
+String s = "AVKXJALFJAAACXKJAJFIJAXLVALFH";
+for (int i = 0; i < s.length; i++) {
+if (charfreq.containsKey(s[i])) {
+charfreq[s[i]] = charfreq[s[i]] + 1;
+} else {
+charfreq.addAll({s[i]:1});
+}
+}
+print(charfreq);
+}
+
+
+
 
 
 
