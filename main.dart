@@ -152,6 +152,22 @@ print(charfreq);
 }
 
 
+// Binary Number To Decimal Number Conversion
+import 'dart:math';
+
+void main() {
+  var sum = 0.0;
+  String s = "1101110";
+  var new1 = s.split("");
+  List inT = new1.map(int.parse).toList();
+  int Pcount = inT.length - 1;
+  for (int i = 0; i < inT.length; i++) {
+    sum += pow((inT[i] * 2), Pcount);
+    Pcount--;
+  }
+  print(sum - 1);
+}
+
 
 
 
