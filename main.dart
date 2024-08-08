@@ -169,6 +169,52 @@ void main() {
 }
 
 
+// Write a dart program to make a rock paper and scissor game
+import 'dart:io';
+import 'dart:math';
+void GameRockPaperSiser() {
+  stdout.write("Enter the number of points you want to play: ");
+  int numberPoints = int.parse(stdin.readLineSync()!);
+  String first;
+  int firstcount, computercount, tiepoints = 0;
+  firstcount = 0;
+  computercount = 0;
+  List gameItems = ["rock", "paper", "scissor"];
+  int n = 1;
+  while (n <= numberPoints) {
+  var secondRan = Random().nextInt(gameItems.length);
+    stdout.write("You select: ");
+    String first1 = stdin.readLineSync()!;
+    first = first1.toLowerCase();
+    stdout.write("Computer select: ${gameItems[secondRan]}");
+    print("");
+    if (first == gameItems[secondRan]) {
+      tiepoints++;
+      print("Match Tie No Point");
+    } else if (first == "rock" && "paper" == gameItems[secondRan])
+      computercount += 1;
+    else if (first == "paper" && "scissor" == gameItems[secondRan])
+      computercount += 1;
+    else if (first == "scissor" && "rock" == gameItems[secondRan])
+      computercount += 1;
+    else if (first == "paper" && "rock" == gameItems[secondRan])
+      firstcount += 1;
+    else if (first == "scissor" && "paper" == gameItems[secondRan])
+      firstcount += 1;
+    else if (first == "rock" && "scissor" == gameItems[secondRan])
+      firstcount += 1;
+    n += 1;
+  }
+  if (firstcount > computercount)
+    print(
+        "You win the match with ${numberPoints - tiepoints} out of $firstcount points and $tiepoints are tie");
+  else if (firstcount < computercount) {
+    print(
+        "Computer win the match with ${numberPoints - tiepoints} out of $computercount points and $tiepoints are tie");
+  } else if (firstcount == computercount)
+    print("Match Tie both points are same");
+}
 
-
-
+void main() {
+  GameRockPaperSiser();
+}
