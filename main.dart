@@ -175,34 +175,70 @@ import 'dart:math';
 void GameRockPaperSiser() {
   stdout.write("Enter the number of points you want to play: ");
   int numberPoints = int.parse(stdin.readLineSync()!);
-  String first;
+  String first = " ";
   int firstcount, computercount, tiepoints = 0;
   firstcount = 0;
   computercount = 0;
-  List gameItems = ["rock", "paper", "scissor"];
+  List gameItems = ["Rock", "Paper", "Scissor"];
   int n = 1;
   while (n <= numberPoints) {
-  var secondRan = Random().nextInt(gameItems.length);
-    stdout.write("You select: ");
-    String first1 = stdin.readLineSync()!;
-    first = first1.toLowerCase();
+    print("\n1: Rock\n2: Paper\n3: Scissor");
+    stdout.write("Select Any Option: ");
+    int Case1 = int.parse(stdin.readLineSync()!);
+    switch (Case1) {
+      case 1:
+        first = "Rock";
+        break;
+      case 2:
+        first = "Paper";
+        break;
+      case 3:
+        first = "Scissor";
+        break;
+      default:
+        print("Inavlid option");
+        break;
+    }
+    var secondRan = Random().nextInt(gameItems.length);
     stdout.write("Computer select: ${gameItems[secondRan]}");
     print("");
     if (first == gameItems[secondRan]) {
       tiepoints++;
       print("Match Tie No Point");
-    } else if (first == "rock" && "paper" == gameItems[secondRan])
+      stdout.write("Exit The Game(Y\\N)");
+      String optionInput = stdin.readLineSync()!;
+      var optionCasing = optionInput.toUpperCase();
+      while (optionCasing != "Y" && optionCasing != "N") {
+        stdout.write("Invalid Option select again: ");
+        optionInput = stdin.readLineSync()!;
+        optionCasing = optionInput.toUpperCase();
+        if (optionCasing == "Y" || optionCasing == "N") break;
+      }
+      if (optionCasing == "Y")
+        break;
+      else {
+        print("Game continue");
+      }
+    } else if (first == "Rock" && "Paper" == gameItems[secondRan]) {
       computercount += 1;
-    else if (first == "paper" && "scissor" == gameItems[secondRan])
+      print("Computer win one point");
+    } else if (first == "Paper" && "Scissor" == gameItems[secondRan]) {
       computercount += 1;
-    else if (first == "scissor" && "rock" == gameItems[secondRan])
+      print("Computer win one point");
+    } else if (first == "Scissor" && "Rock" == gameItems[secondRan]) {
       computercount += 1;
-    else if (first == "paper" && "rock" == gameItems[secondRan])
+      print("Computer win one point");
+    } else if (first == "Paper" && "Rock" == gameItems[secondRan]) {
       firstcount += 1;
-    else if (first == "scissor" && "paper" == gameItems[secondRan])
+      print("You win one point");
+    } else if (first == "Scissor" && "Paper" == gameItems[secondRan]) {
       firstcount += 1;
-    else if (first == "rock" && "scissor" == gameItems[secondRan])
+      print("You win one point");
+    } else if (first == "Rock" && "Scissor" == gameItems[secondRan]) {
       firstcount += 1;
+      print("You win one point");
+    }
+
     n += 1;
   }
   if (firstcount > computercount)
@@ -212,7 +248,7 @@ void GameRockPaperSiser() {
     print(
         "Computer win the match with ${numberPoints - tiepoints} out of $computercount points and $tiepoints are tie");
   } else if (firstcount == computercount)
-    print("Match Tie both points are same");
+    print("Final result both points are same");
 }
 
 void main() {
