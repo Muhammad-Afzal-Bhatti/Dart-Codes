@@ -254,3 +254,22 @@ void GameRockPaperSiser() {
 void main() {
   GameRockPaperSiser();
 }
+
+
+// Write a Dart Program To Remove Duplicate Numbers From List
+void main() {
+List n=[2,5,2,2,4,5,3,6,3];
+List duplicate=[];
+for(int i=0;i<n.length;i++){
+  bool isdup=true;
+  for(int j=0;j<duplicate.length;j++){
+    if(n[i]==duplicate[j])
+    isdup=false;
+  }
+  if(isdup)
+  duplicate.add(n[i]);
+}
+print(duplicate);
+
+}
+
